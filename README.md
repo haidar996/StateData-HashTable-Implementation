@@ -1,55 +1,41 @@
 # StateData-HashTable-Implementation
 A C++ hash table implementation for storing U.S. state data (name, capital, admission year/order). Uses quadratic probing for collision resolution. Supports insert, delete, search, and display operations. Includes a custom hash function for state names.
-StateData HashTable Implementation
-Overview
-This project implements a hash table in C++ to store and manage U.S. state information. Each state record includes:
+## 🎯 Features
 
-State name
+- 📥 Insert U.S. state records (name, capital, admission year, order)
+- ❌ Delete records by state name
+- 🔍 Search for a state by name
+- 📄 Display all stored records with status
+- 🧮 Custom hash function tailored for state names
+- 🌀 Efficient **quadratic probing** for collision resolution
 
-Capital
+---
 
-Year of admission to the Union
+## 🧱 Code Structure
 
-Order of admission
+| File / Class       | Description                                                             |
+|--------------------|-------------------------------------------------------------------------|
+| `stateData` class  | Represents a U.S. state with `name`, `capital`, `admission year`, and `admission order` |
+| `hasht<T>` class   | Generic hash table with insertion, deletion, search, and display logic |
+| `main.cpp`         | Demonstrates how the hash table is used and tested                     |
 
-The hash table uses quadratic probing for collision resolution and provides basic operations such as insertion, deletion, searching, and printing.
+---
 
-Features
-Hash table with quadratic probing
+## ⚙️ Hash Table Details
 
-Insertion and deletion of state records
+- Default table size: **100**
+- Hash function processes characters in the state name to compute a numeric key
+- **Quadratic probing formula**: `h(k) + i²` for resolving collisions
+- Entry status:
+  - `1` → Occupied
+  - `-1` → Deleted
+  - `0` → Empty (implicitly)
 
-Search for states by name
+---
 
-Display all stored state records
+## 🕹️ How to Use
 
-Custom hash function for state names
+### 1. Compile the Program
 
-Files
-main.cpp: Contains the implementation of the stateData class and the hash table template class.
-
-How to Use
-Compile the code using a C++ compiler (e.g., g++):
-
-bash
+```bash
 g++ main.cpp -o stateHash
-Run the executable:
-
-bash
-./stateHash
-The program will insert sample state records, remove one, and print the remaining records.
-
-Example Output
-The program outputs the hash table indices, state names, and their status (1 for occupied, -1 for deleted). For example:
-
-text
-4 Arkansas  1  
-29 Colorado  1  
-31 Arizona  1  
-46 Alabama  1  
-82 Alaska  1  
-92 California -1  
-Notes
-The hash table size is set to 100 by default.
-
-The hash function processes state names by breaking them into segments and computing a weighted sum.
