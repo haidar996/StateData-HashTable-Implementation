@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1702931833 source:d:\code\hasht\main.cpp
+	<iostream>
+	<cassert>
+	<iostream>
+	<string>
+	<cstring>
+
